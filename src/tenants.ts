@@ -1,15 +1,14 @@
-// src/tenants.ts
 export type Tenant = {
   slug: string;                 // subdominio
-  name: string;                 // nombre público a mostrar
-  donationAddress: string;      // wallet SPL/SOL donde recibe donaciones
-  ownerWallet: string;          // wallet del dueño (login con wallet)
+  name: string;                 // nombre público
+  donationAddress: string;      // wallet de recepción
+  ownerWallet: string;          // wallet del dueño (login)
   description?: string;
   socials?: {
-    twitter?: string;           // url completa o @handle
     instagram?: string;
-    github?: string;
-    website?: string;
+    discord?: string;
+    x?: string;                 // antes "twitter"
+    // website?: string;        // opcional si quieres mantenerlo
   };
   avatarUrl?: string;
   coverUrl?: string;
@@ -21,14 +20,12 @@ export const TENANTS: Record<string, Tenant> = {
     slug: 'eric',
     name: 'Eric Donations',
     donationAddress: 'CizD8893JhSMsuGLEXJPFPAYZCKKumgxPwRHFWNqmkJy',
-    ownerWallet: 'CizD8893JhSMsuGLEXJPFPAYZCKKumgxPwRHFWNqmkJy', // por ahora igual que donationAddress
-    description:
-      'Ayudo a proyectos web3. Tu donación en SOL/USDC se usa para construir herramientas abiertas.',
+    ownerWallet: 'CizD8893JhSMsuGLEXJPFPAYZCKKumgxPwRHFWNqmkJy',
+    description: 'Ayudo a proyectos web3. Tu donación en SOL/USDC se usa para construir herramientas abiertas.',
     socials: {
-      twitter: 'https://x.com/tu_usuario',
-      github: 'https://github.com/ingelabmx',
-      website: 'https://jerseyware.com',
+      instagram: 'https://instagram.com/tu_usuario',
+      discord: 'https://discord.gg/tu_invite',
+      x: 'https://x.com/tu_usuario',
     },
-    coverUrl: '',
   },
 };

@@ -1,9 +1,7 @@
-// src/components/DonateCard.tsx
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
 import { useWallet, useConnection } from '@solana/wallet-adapter-react';
-import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import {
   LAMPORTS_PER_SOL,
   PublicKey,
@@ -107,10 +105,7 @@ export default function DonateCard({
 
   return (
     <div className="w-full rounded-2xl border border-gray-800 bg-gray-950/60 p-6 shadow-xl">
-      {/* Wallet button dentro de la tarjeta también (opcional) */}
-      <div className="mb-4 flex justify-end">
-        <WalletMultiButton className="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1.5 rounded-lg" />
-      </div>
+      <h3 className="text-lg font-semibold mb-4">Dona en la moneda preferida</h3>
 
       {/* Selector de activo */}
       <div className="flex gap-2 bg-gray-900 p-1 rounded-xl border border-gray-800 mb-4">
@@ -155,10 +150,17 @@ export default function DonateCard({
         {loading ? 'Enviando…' : 'Donate'}
       </button>
 
+      {!publicKey && (
+        <p className="mt-2 text-xs text-yellow-400">
+          Conecta tu wallet desde la barra superior para poder donar.
+        </p>
+      )}
+
       {txSig && (
         <a
           href={`https://explorer.solana.com/tx/${txSig}?cluster=${cluster}`}
-          target="_blank" rel="noreferrer"
+          target="_blank"
+          rel="noreferrer"
           className="block text-center text-indigo-400 hover:underline mt-3"
         >
           Ver transacción en Solana Explorer
