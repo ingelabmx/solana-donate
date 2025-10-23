@@ -29,9 +29,9 @@ export default function SiteNav() {
       <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
           <div className="h-8 w-8 rounded-lg overflow-hidden bg-gray-800 flex items-center justify-center">
-            <Image src="/logo.png" alt="logo" width={32} height={32} className="object-cover" />
+            <Image src="/kindralogo.png" alt="logo" width={50} height={50} className="object-cover" />
           </div>
-          <span className="font-semibold tracking-wide">Solana Donations</span>
+          <span className="font-semibold tracking-wide">Kindra</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-4">
